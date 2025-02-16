@@ -9,11 +9,12 @@ import axios from 'axios'
 import './App.css'
 
 function App() {
-  const [code, setCode] = useState(` function sum() {
+  const [ count, setCount ] = useState(0)
+  const [ code, setCode ] = useState(` function sum() {
   return 1 + 1
 }`)
 
-  const [review, setReview] = useState(``)
+  const [ review, setReview ] = useState(``)
 
   useEffect(() => {
     prism.highlightAll()
@@ -51,7 +52,7 @@ function App() {
         <div className="right">
           <Markdown
 
-            rehypePlugins={[rehypeHighlight]}
+            rehypePlugins={[ rehypeHighlight ]}
 
           >{review}</Markdown>
         </div>
